@@ -1,21 +1,41 @@
-# print("Hello world!")
-# print("Bizimarian23@gmail.com")
+from Ex_3 import *
+#Ex 3
 
 
 
-import copy
+#Ex 1
+def your_function(*args,**kwargs):
+    suma = 0
+    while suma == 0:
+        for i in args:
+            try:
+                if i == int(i):
+                    suma = suma + i
+            except ValueError :
+                pass
+            except TypeError:
+                pass
+        for j in kwargs:
+            try:
+                 if j == int(j):
+                    suma = suma + j
+            except ValueError:
+                pass
+            except TypeError:
+                 pass
 
-list1 = [7,8,9,2,3,1,4,10,5,6]
 
-Ascendent = copy.deepcopy(list1)
-Ascendent.sort()
-print(f"Lista ascendenta este:  {Ascendent}")
 
-Descendent = copy.deepcopy(Ascendent)
-Descendent.reverse()
-print(f"Lista descendenta este:  {Descendent}")
 
-print(f"Lista numerelor cu indici pari este:  {Ascendent[1::2]}")
-print(f"Lista numerelor cu indici pari este:  {Ascendent[::2]}")
+        return suma
 
-print(f"Lista  elementelor care sunt multipli ai lui 3 este: {Ascendent[2::3]}")
+print(your_function(1,5,-3,"abc",[12,56,"cad"]))
+
+
+#Ex2
+Number = input("Enter a number: ")
+try:
+    Int = int(Number)
+    print(Number)
+except ValueError as e:
+    print(0)
